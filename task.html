@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <script>
+
+    const daire = document.createElement('div');
+    daire.classList.add("daire");
+    document.body.append(daire); 
+ 
+
+        top = 0
+        left = 0
+        right = 0
+        bottom = 0
+
+    document.body.addEventListener("keypress", function (e) {
+
+        step = 10
+
+       
+        if (e.key === 'w') { 
+            console.log("wwwwwwww");
+            daire.style.top = (top - step) + "px";
+            top =(top - step) 
+        } else if (e.key === 'a') { 
+            daire.style.left = (left - step) + "px";
+            left =(left - step) 
+        } else if (e.key === 's') { 
+            daire.style.top = (top + step) + "px";
+        } else if (e.key === 'd') { 
+            console.log(left);
+            console.log("d");
+            daire.style.left = (left + step) + "px";
+            left = left + step 
+        }
+});
+
+
+
+
+                // document.body.addEventListener("keypress", function (e) {
+        //     if (e.key === "Enter") {
+        //         btn.click()
+        //     }
+        // })
+            
+
+    </script>
+</body>
+</html>

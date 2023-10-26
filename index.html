@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        body{
+            padding: 50px 500px;
+        }
+        .container{
+            border: 1px solid black;
+            padding: 10px;
+            min-height: 300px;
+        }
+        .todoItem{
+            display: flex;
+            border: 1px solid black;
+            padding: 5px;
+        }
+        .todoItem__text{
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" class="todoInp">
+        <button id="btn">add</button>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <!-- addim 4 elementi dizayn edirem -->
+
+
+    </div>
+
+
+
+    <script>
+        //addim 1 elemenleri secmek
+        const btn = document.getElementById('btn')
+        const todoInp = document.querySelector('.todoInp')
+        const container = document.querySelector('.container')
+        //addim 10
+        let todoInpMode = "Add"
+
+        //addim 2 click hasidesi tutmaq
+        btn.addEventListener('click',(e)=>{
+            //addim 8 bos gondermek olmaz
+            
+
+            if (todoInpMode === "Add") {
+                
+            
+
+            //addim 3 iputun icindeki yazini goturmeliyem 
+
+
+
+
+            //addim 5 htmlde yaradigin sablonu jsde yarat
+            const todoItem = document.createElement('div')
+            const todoItem__edit =document.createElement('button')
+            const todoItem__trash =document.createElement('button')
+            const todoItem__text =document.createElement('div')
+
+
+            todoItem__edit.textContent = 'EDIT'
+            todoItem__trash.textContent = 'X' 
+            todoItem__text.textContent = todoInp.value
+
+
+
+            todoItem.classList.add('todoItem')
+            todoItem__edit.classList.add('todoItem__edit')
+            todoItem__trash.classList.add('todoItem__trash')
+            todoItem__text.classList.add('todoItem__text')
+
+
+
+
+
+
+            todoItem.append(todoItem__text,todoItem__edit,todoItem__trash)
+            container.append(todoItem)
+
+
+
+
+            todoItem__trash.onclick = () => todoItem.remove()
+
+
+
+            //addim 8 editin clickini tuturam
+
+            todoItem__edit.onclick = () =>{
+                todoInp.value = todoItem__text.textContent
+                btn.textContent = 'edit'
+            }
+
+            todoInp.value = ''
+        }})
+
+
+    </script>
+</body>
+</html>
